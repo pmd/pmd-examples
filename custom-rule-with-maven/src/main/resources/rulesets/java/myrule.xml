@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<ruleset name="My Rule"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+
+    <description>
+My Custom Rule
+    </description>
+
+    <rule name="MyRule"
+          language="java"
+          class="com.github.pmd.customruleexample.MyRule"
+          message="Avoid the identifier 'foo'.">
+        <description>
+Don't use the identifier name 'foo'. Use a real name instead, that explains, what the
+variable is used for.
+        </description>
+        <priority>1</priority>
+        <example>
+<![CDATA[
+public class Example {
+    String foo; // bad
+    String city; // better
+}
+]]>
+        </example>
+    </rule>
+</ruleset>
