@@ -2,6 +2,7 @@
 
 # exit immediately if a command fails
 set -e
+jdk_switcher use oraclejdk9
 
 echo
 echo "======================================================="
@@ -23,7 +24,7 @@ echo Building custom-rule-with-maven
 echo "======================================================="
 echo
 
-mvn -f custom-rule-with-maven/pom.xml clean verify
+mvn -B -V -f custom-rule-with-maven/pom.xml clean verify
 
 
 echo
