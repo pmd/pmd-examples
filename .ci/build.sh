@@ -3,11 +3,7 @@
 # exit immediately if a command fails
 set -e
 
-set -x
-echo "PATH: $PATH"
-which jar
-jar --version
-
+jdk_switcher use oraclejdk9
 
 echo
 echo "======================================================="
