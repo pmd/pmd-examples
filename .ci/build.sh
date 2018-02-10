@@ -3,6 +3,12 @@
 # exit immediately if a command fails
 set -e
 
+set -x
+echo "PATH: $PATH"
+which jar
+jar --version
+
+
 echo
 echo "======================================================="
 echo "Downloading PMD 6.0.1"
