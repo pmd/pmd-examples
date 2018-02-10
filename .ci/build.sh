@@ -9,11 +9,11 @@ echo "Downloading PMD 6.0.1"
 echo "======================================================="
 echo
 export PMD_HOME=${HOME}/pmd-bin-6.0.1
-if [ ! -e ${PMD_HOME} ]; then
+if [ ! -d ${PMD_HOME} ]; then
     wget https://github.com/pmd/pmd/releases/download/pmd_releases%2F6.0.1/pmd-bin-6.0.1.zip -O ${HOME}/pmd-bin-6.0.1.zip
     unzip -d ${HOME} ${HOME}/pmd-bin-6.0.1.zip
 else
-    echo "PMD 6.0.1 already installed"
+    echo "PMD 6.0.1 already installed: ${PMD_HOME}"
 fi
 
 
