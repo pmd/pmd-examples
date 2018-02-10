@@ -44,13 +44,9 @@
 
 ## Use the custom rule with PMD CLI
 
-1.  Copy the jar file `custom-rule-example.jar` to the `lib` directory:
+1.  Run PMD with the just created jar file on the classpath, e.g. on the folder `testsrc`
 
-        $ cp custom-rule-example.jar ../pmd-bin-6.0.1/lib/
-
-2.  Run PMD, e.g. on the folder `testsrc`
-
-        $ ../pmd-bin-6.0.1/bin/run.sh pmd -f text -d testsrc -R myrule.xml
+        $ CLASSPATH=custom-rule-example.jar ../pmd-bin-6.0.1/bin/run.sh pmd -f text -d testsrc -R myrule.xml
         Feb. 08, 2018 3:14:02 NACHM. net.sourceforge.pmd.cache.NoopAnalysisCache <init>
         WARNUNG: This analysis could be faster, please consider using Incremental Analysis: https://pmd.github.io/pmd-6.0.1/pmd_userdocs_getting_started.html#incremental-analysis
         /home/andreas/code/pmd-examples/custom-rule-manually/testsrc/Test.java:2:	Avoid the identifier foo.
