@@ -2,7 +2,8 @@ language: java
 install:
   - true
 script:
-  - source .ci/build.sh
+  - jdk_switcher use oraclejdk9
+  - bash .ci/build.sh
 
 cache:
   directories:

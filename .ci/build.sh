@@ -2,7 +2,8 @@
 
 # exit immediately if a command fails
 set -e
-jdk_switcher use oraclejdk9
+java -version
+
 
 echo
 echo "======================================================="
