@@ -7,4 +7,4 @@ script:
 
 cache:
   directories:
-    - $HOME/pmd-bin-6.0.1/
+    - $HOME/.m2
