@@ -1,0 +1,10 @@
+language: java
+install:
+  - true
+script:
+  - jdk_switcher use oraclejdk9
+  - bash .ci/build.sh
+
+cache:
+  directories:
+    - $HOME/pmd-bin-6.0.1/
