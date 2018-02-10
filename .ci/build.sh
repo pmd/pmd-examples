@@ -2,8 +2,6 @@
 
 # exit immediately if a command fails
 set -e
-source /opt/jdk_switcher/jdk_switcher.sh
-jdk_switcher use oraclejdk9
 java -version
 
 
