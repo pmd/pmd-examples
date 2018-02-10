@@ -3,8 +3,6 @@
 # exit immediately if a command fails
 set -e
 
-jdk_switcher use oraclejdk9
-
 echo
 echo "======================================================="
 echo "Downloading PMD 6.0.1"
