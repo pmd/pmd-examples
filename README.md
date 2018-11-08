@@ -2,6 +2,13 @@
 
 Sample project which shows how to create and use custom rules for PLSQL.
 
+You can build the project using maven:
+
+```
+$ ./mvnw clean verify
+```
+
+
 ## pmd-plsql-custom
 
 This is a sample project, which contains two sample rules:
