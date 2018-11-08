@@ -38,4 +38,5 @@ Custom Ruleset with PLSQL Rules
     <rule ref="category/plsql/errorprone.xml/TO_TIMESTAMPWithoutDateFormat" />
 
     <rule ref="net/sourceforge/pmd/examples/plsql/rules/VariableNaming.xml/VariableNaming" />
+    <rule ref="net/sourceforge/pmd/examples/plsql/rules/ShortVariable.xml/ShortVariable" />
 </ruleset>
