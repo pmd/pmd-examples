@@ -12,3 +12,10 @@ This is a sample project, which contains two sample rules:
 Building the project also runs the unit tests for the rules.
 
 The result is a jar file, which contains the rules: `target/pmd-plsql-custom-1.0.0-SNAPSHOT.jar`.
+
+## pmd-plsql-dist
+
+This builds a customized PMD binary, which includes all necessary dependencies for PLSQL only
+including the custom rules.
+
+The result is a zip file: `target/pmd-plsql-bin-1.0.0-SNAPSHOT.zip`.
