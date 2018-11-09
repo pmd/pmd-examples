@@ -31,6 +31,41 @@
     </dependency>
     <dependency>
       <groupId>net.sourceforge.pmd</groupId>
+      <artifactId>pmd-ui</artifactId>
+      <version>${pmd.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>net.sourceforge.pmd</groupId>
+          <artifactId>pmd-apex</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>net.sourceforge.pmd</groupId>
+          <artifactId>pmd-java</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>net.sourceforge.pmd</groupId>
+          <artifactId>pmd-jsp</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>net.sourceforge.pmd</groupId>
+          <artifactId>pmd-visualforce</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>net.sourceforge.pmd</groupId>
+          <artifactId>pmd-xml</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>net.sourceforge.pmd</groupId>
+          <artifactId>pmd-vm</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>net.sourceforge.pmd</groupId>
+          <artifactId>pmd-javascript</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>net.sourceforge.pmd</groupId>
       <artifactId>pmd-test</artifactId>
       <version>${pmd.version}</version>
       <scope>test</scope>

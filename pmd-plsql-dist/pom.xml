@@ -58,6 +58,10 @@
       <groupId>net.sourceforge.pmd</groupId>
       <artifactId>pmd-core</artifactId>
     </dependency>
+    <dependency>
+      <groupId>net.sourceforge.pmd</groupId>
+      <artifactId>pmd-ui</artifactId>
+    </dependency>
   </dependencies>
 
 </project>
