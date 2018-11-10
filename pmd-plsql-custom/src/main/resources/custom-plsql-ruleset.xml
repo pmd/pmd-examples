@@ -19,7 +19,12 @@ Custom Ruleset with PLSQL Rules
 
     <rule ref="category/plsql/bestpractices.xml/TomKytesDespair" />
     <rule ref="category/plsql/codestyle.xml/CodeFormat" />
-    <rule ref="category/plsql/codestyle.xml/ForLoopNaming" />
+    <rule ref="category/plsql/codestyle.xml/ForLoopNaming">
+      <properties>
+        <property name="cursorPattern" value="c_[a-z]+" />
+        <property name="indexPattern" value="i_[a-z]+" />
+      </properties>
+    </rule>
     <rule ref="category/plsql/codestyle.xml/MisplacedPragma" />
     <rule ref="category/plsql/design.xml/CyclomaticComplexity" />
     <rule ref="category/plsql/design.xml/ExcessiveMethodLength" />
