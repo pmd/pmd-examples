@@ -12,38 +12,73 @@
   </parent>
 
   <artifactId>pmd-plsql-dist</artifactId>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
 
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>
-                    <appendAssemblyId>false</appendAssemblyId>
-                    <attach>false</attach>
-                    <archiverConfig>
-                        <defaultDirectoryMode>493</defaultDirectoryMode> <!-- 0755 -->
-                    </archiverConfig>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>build-bin-dist</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                        <configuration>
-                            <finalName>pmd-plsql-bin-${project.version}</finalName>
-                            <descriptors>
-                                <descriptor>src/main/assembly/bin.xml</descriptor>
-                            </descriptors>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
- 
+  <properties>
+    <pmd.dist.bin.baseDirectory>pmd-plsql-bin-${project.version}</pmd.dist.bin.baseDirectory>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>unpack</id>
+            <phase>package</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>net.sourceforge.pmd</groupId>
+                  <artifactId>pmd-dist</artifactId>
+                  <version>${pmd.version}</version>
+                  <type>jar</type>
+                  <overWrite>false</overWrite>
+                  <outputDirectory>${basedir}/target/extra-resources</outputDirectory>
+                  <includes>scripts/**,LICENSE</includes>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <dependencies>
+          <dependency>
+            <groupId>net.sourceforge.pmd</groupId>
+            <artifactId>pmd-dist</artifactId>
+            <version>${pmd.version}</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <appendAssemblyId>false</appendAssemblyId>
+          <attach>false</attach>
+          <archiverConfig>
+            <defaultDirectoryMode>493</defaultDirectoryMode> <!-- 0755 -->
+          </archiverConfig>
+          <finalName>${pmd.dist.bin.baseDirectory}</finalName>
+          <descriptorRefs>
+            <descriptorRef>pmd-bin</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+        <executions>
+          <execution>
+            <id>build-bin-dist</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
   <dependencies>
     <dependency>
       <groupId>net.sourceforge.pmd.examples</groupId>
