@@ -1,5 +1,7 @@
 # Java Custom Rules without maven
 
+[![Build Status](https://travis-ci.org/pmd/pmd-examples.svg?branch=java-without-maven)](https://travis-ci.org/pmd/pmd-examples)
+
 Just with `javac` and `jar`.
 
 ## Prepare environment
