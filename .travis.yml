@@ -1,0 +1,8 @@
+language: java
+jdk:
+  - openjdk11
+
+install:
+  - true
+script:
+  - bash .ci/build.sh
