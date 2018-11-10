@@ -1,6 +1,10 @@
-# Templates for creating custom rules
+# Template projects for creating custom rules
 
-[![Build Status](https://travis-ci.org/pmd/pmd-examples.svg?branch=master)](https://travis-ci.org/pmd/pmd-examples)
+This repository contains additional branches for specific use cases:
 
-1.  [custom-rule-manually/](custom-rule-manually): Custom PMD rule using javac and jar.
-2.  [custom-rule-with-maven/](custom-rule-with-maven): Custom PMD rule using a separate maven project.
+*   [branch java](https://github.com/pmd/pmd-examples/tree/java): Java Custom Rules
+*   [branch plsql](https://github.com/pmd/pmd-examples/tree/plsql): PLSQL Custom Rules
+*   [branch java-without-maven](https://github.com/pmd/pmd-examples/tree/java-without-maven): Java Custom Rules without maven
+
+On the master branch, you'll find the [PMDExamples.setup](https://github.com/pmd/pmd-examples/blob/master/PMDExamples.setup).
+Use this file to setup a eclipse based development environment based on [Eclipse Oomph](https://wiki.eclipse.org/Eclipse_Installer).
