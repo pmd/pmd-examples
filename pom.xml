@@ -14,7 +14,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>8</java.version>
     <maven.compiler.release>${java.version}</maven.compiler.release>
-    <pmd.version>6.9.0</pmd.version>
+    <pmd.version>6.11.0</pmd.version>
   </properties>
 
   <dependencyManagement>
@@ -33,36 +33,6 @@
       <groupId>net.sourceforge.pmd</groupId>
       <artifactId>pmd-ui</artifactId>
       <version>${pmd.version}</version>
-      <exclusions>
-        <exclusion>
-          <groupId>net.sourceforge.pmd</groupId>
-          <artifactId>pmd-apex</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>net.sourceforge.pmd</groupId>
-          <artifactId>pmd-jsp</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>net.sourceforge.pmd</groupId>
-          <artifactId>pmd-plsql</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>net.sourceforge.pmd</groupId>
-          <artifactId>pmd-visualforce</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>net.sourceforge.pmd</groupId>
-          <artifactId>pmd-xml</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>net.sourceforge.pmd</groupId>
-          <artifactId>pmd-vm</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>net.sourceforge.pmd</groupId>
-          <artifactId>pmd-javascript</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>net.sourceforge.pmd</groupId>
@@ -91,6 +61,11 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
           <version>3.1.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>3.1.1</version>
         </plugin>
       </plugins>
     </pluginManagement>
