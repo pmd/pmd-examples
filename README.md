@@ -1,10 +1,11 @@
-# Template projects for creating custom rules
+# Apex-only Distribution
 
-This repository contains additional branches for specific use cases:
+Sample project which shows how to create a binary distribution stripped down to one language module (Apex).
 
-*   [branch java](https://github.com/pmd/pmd-examples/tree/java): Java Custom Rules
-*   [branch plsql](https://github.com/pmd/pmd-examples/tree/plsql): PLSQL Custom Rules
-*   [branch java-without-maven](https://github.com/pmd/pmd-examples/tree/java-without-maven): Java Custom Rules without maven
+You can build the project using maven:
 
-On the master branch, you'll find the [PMDExamples.setup](https://github.com/pmd/pmd-examples/blob/master/PMDExamples.setup).
-Use this file to setup a eclipse based development environment based on [Eclipse Oomph](https://wiki.eclipse.org/Eclipse_Installer).
+```
+$ ./mvnw clean verify
+```
+
+This results in a zip file: `target/pmd-apex-bin-6.23.0.zip`. It can be installed [like any pmd distribution](https://pmd.github.io/latest/pmd_userdocs_installation.html#installation) but only contains the Apex module (and no designer).
