@@ -1,6 +1,6 @@
 # Java Custom Rules
 
-[![Build Status](https://travis-ci.org/pmd/pmd-examples.svg?branch=java)](https://travis-ci.org/pmd/pmd-examples)
+[![Build Status](https://travis-ci.com/pmd/pmd-examples.svg?branch=java)](https://travis-ci.com/pmd/pmd-examples)
 
 Sample project which shows how to create and use custom rules for Java.
 
