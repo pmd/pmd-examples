@@ -4,7 +4,7 @@
 set -e
 java -version
 
-PMD_VERSION=6.55.0
+PMD_VERSION=7.0.0-rc3
 
 echo
 echo "======================================================="
@@ -22,8 +22,8 @@ echo "======================================================="
 echo
 export PMD_HOME=${BASEDIR}/code/pmd-bin-${PMD_VERSION}
 if [ ! -d ${PMD_HOME} ]; then
-    wget --no-verbose https://github.com/pmd/pmd/releases/download/pmd_releases%2F${PMD_VERSION}/pmd-bin-${PMD_VERSION}.zip -O ${BASEDIR}/code/pmd-bin-${PMD_VERSION}.zip
-    unzip -q -d ${BASEDIR}/code ${BASEDIR}/code/pmd-bin-${PMD_VERSION}.zip
+    wget --no-verbose https://github.com/pmd/pmd/releases/download/pmd_releases%2F${PMD_VERSION}/pmd-dist-${PMD_VERSION}-bin.zip -O ${BASEDIR}/code/pmd-dist-${PMD_VERSION}-bin.zip
+    unzip -q -d ${BASEDIR}/code ${BASEDIR}/code/pmd-dist-${PMD_VERSION}-bin.zip
     echo "PMD ${PMD_VERSION} installed at: ${PMD_HOME}"
 else
     echo "PMD ${PMD_VERSION} already installed: ${PMD_HOME}"
@@ -48,10 +48,10 @@ cp src/myrule.xml build/
 echo "Creating jar custom-rule-example.jar..."
 jar -c -f custom-rule-example.jar -C build .
 echo "Executing PMD"
-CLASSPATH=custom-rule-example.jar ${PMD_HOME}/bin/run.sh pmd \
+CLASSPATH=custom-rule-example.jar ${PMD_HOME}/bin/pmd check \
     --no-cache \
     -f text -d testsrc -R myrule.xml \
-    --fail-on-violation false \
+    --no-fail-on-violation \
     --report-file build/report.txt
 
 grep "testsrc/Test.java" build/report.txt || (echo -e "\n\n\x1b[31mMissing expected rule violation\e[0m"; exit 1)

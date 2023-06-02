@@ -19,12 +19,12 @@ echo "======================================================="
 echo
 cd pmd-plsql-dist/target
 unzip -q pmd-plsql-bin-1.0.0-SNAPSHOT.zip
-pmd-plsql-bin-1.0.0-SNAPSHOT/bin/run.sh pmd --no-cache \
-    --use-version plsql- \
+pmd-plsql-bin-1.0.0-SNAPSHOT/bin/pmd check --no-cache \
+    --use-version plsql-21c \
     -f text \
     -d ../../pmd-plsql-custom/src/test/plsql \
     -R custom-plsql-ruleset.xml \
-    --fail-on-violation false \
+    --no-fail-on-violation \
     --report-file pmdreport.txt
 
 grep "pmd-plsql-custom/src/test/plsql/short_variables.pls" pmdreport.txt || (echo -e "\n\n\x1b[31mMissing expected rule violation\e[0m"; exit 1)

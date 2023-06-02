@@ -5,7 +5,7 @@ public class MyRule extends AbstractJavaRule {
 
     @Override
     public Object visit(ASTVariableDeclaratorId node, Object data) {
-        if (node.hasImageEqualTo("foo")) {
+        if ("foo".equals(node.getName())) {
             asCtx(data).addViolationWithMessage(node, "Avoid the identifier 'foo'.");
         }
         return super.visit(node, data);
