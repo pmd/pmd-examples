@@ -1,0 +1,61 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  custom_rules_maven_java:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run .ci/build.sh
+        run: |
+          cd custom-rules/maven-java
+          .ci/build.sh
+
+  custom_rules_maven_plsql:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run .ci/build.sh
+        run: |
+          cd custom-rules/maven-plsql
+          .ci/build.sh
+
+  custom_rules_plain_java:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run .ci/build
+        run: |
+          cd custom-rules/plain-java
+          .ci/build.sh
+
+  maven_simple_project:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run maven
+        run: |
+          cd maven/simple-project
+          mvn verify | tee build.log
+          grep "You have 3 PMD violations" build.log || (echo "Missing expected rule violation"; exit 1)

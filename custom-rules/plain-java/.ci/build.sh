@@ -12,18 +12,18 @@ echo "Prepare environment"
 echo "======================================================="
 echo
 
-mkdir -p ~/code
-cd ~/code
+BASEDIR="$(pwd)"
+mkdir -p code
 
 echo
 echo "======================================================="
 echo "Downloading PMD ${PMD_VERSION}"
 echo "======================================================="
 echo
-export PMD_HOME=${HOME}/code/pmd-bin-${PMD_VERSION}
+export PMD_HOME=${BASEDIR}/code/pmd-bin-${PMD_VERSION}
 if [ ! -d ${PMD_HOME} ]; then
-    wget https://github.com/pmd/pmd/releases/download/pmd_releases%2F${PMD_VERSION}/pmd-bin-${PMD_VERSION}.zip -O ${HOME}/code/pmd-bin-${PMD_VERSION}.zip
-    unzip -d ${HOME}/code ${HOME}/code/pmd-bin-${PMD_VERSION}.zip
+    wget https://github.com/pmd/pmd/releases/download/pmd_releases%2F${PMD_VERSION}/pmd-bin-${PMD_VERSION}.zip -O ${BASEDIR}/code/pmd-bin-${PMD_VERSION}.zip
+    unzip -d ${BASEDIR}/code ${BASEDIR}/code/pmd-bin-${PMD_VERSION}.zip
 else
     echo "PMD ${PMD_VERSION} already installed: ${PMD_HOME}"
 fi
@@ -33,11 +33,12 @@ echo "======================================================="
 echo "Building java custom rules without maven"
 echo "======================================================="
 echo
-echo "Cloning..."
-cd ~/code
-rm -rf pmd-examples
-git clone https://github.com/pmd/pmd-examples.git pmd-examples
-cd pmd-examples/custom-rules/plain-java
+#Cloning is done by github actions already
+#echo "Cloning..."
+#cd ~/code
+#rm -rf pmd-examples
+#git clone https://github.com/pmd/pmd-examples.git pmd-examples
+#cd pmd-examples/custom-rules/plain-java
 mkdir build
 echo "Compiling..."
 javac -d build -cp "${PMD_HOME}/lib/*" src/*.java
