@@ -48,7 +48,9 @@ cp src/myrule.xml build/
 echo "Creating jar custom-rule-example.jar..."
 jar -c -f custom-rule-example.jar -C build .
 echo "Executing PMD"
-CLASSPATH=custom-rule-example.jar ${PMD_HOME}/bin/run.sh pmd -no-cache -f text -d testsrc -R myrule.xml \
-    -failOnViolation false \
-    -reportfile build/report.txt
+CLASSPATH=custom-rule-example.jar ${PMD_HOME}/bin/run.sh pmd \
+    --no-cache \
+    -f text -d testsrc -R myrule.xml \
+    --fail-on-violation false \
+    --report-file build/report.txt
 grep "testsrc/Test.java" build/report.txt || (echo "Missing expected rule violation"; exit 1)

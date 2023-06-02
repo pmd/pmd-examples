@@ -19,11 +19,11 @@ echo "======================================================="
 echo
 cd pmd-java-dist/target
 unzip pmd-java-bin-1.0.0-SNAPSHOT.zip
-pmd-java-bin-1.0.0-SNAPSHOT/bin/run.sh pmd -no-cache \
+pmd-java-bin-1.0.0-SNAPSHOT/bin/run.sh pmd --no-cache \
     -f text \
     -d ../../ \
     -R custom-java-ruleset.xml \
-    -failOnViolation false \
-    -reportfile pmdreport.txt
+    --fail-on-violation false \
+    --report-file pmdreport.txt
 
 grep "examples/java/rules/MyRule.java" pmdreport.txt || (echo "Missing expected rule violation"; exit 1)
