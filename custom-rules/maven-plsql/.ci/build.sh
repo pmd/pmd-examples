@@ -20,7 +20,7 @@ echo
 cd pmd-plsql-dist/target
 unzip pmd-plsql-bin-1.0.0-SNAPSHOT.zip
 pmd-plsql-bin-1.0.0-SNAPSHOT/bin/run.sh pmd --no-cache \
-    -l plsql \
+    --use-version plsql- \
     -f text \
     -d ../../pmd-plsql-custom/src/test/plsql \
     -R custom-plsql-ruleset.xml \
