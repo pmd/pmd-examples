@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data xmlns="http://pmd.sourceforge.net/rule-tests"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/rule-tests https://pmd.sourceforge.io/rule-tests_1_0_0.xsd">
+    <test-code>
+        <description>Example with default property</description>
+        <expected-problems>1</expected-problems>
+        <expected-linenumbers>2</expected-linenumbers>
+        <expected-messages>
+            <message>Variables should be all lowercase</message>
+        </expected-messages>
+        <code><![CDATA[
+public class Example {
+    String CITY; // bad
+    String city; // better
+}
+        ]]></code>
+        <source-type>java</source-type>
+    </test-code>
+</test-data>

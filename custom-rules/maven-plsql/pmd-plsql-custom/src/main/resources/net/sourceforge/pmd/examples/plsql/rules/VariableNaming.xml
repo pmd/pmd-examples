@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ruleset name="VariableNamingRule"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>
+Rule set which defines VariableNamingRule
+    </description>
+
+    <rule name="VariableNaming"
+          language="plsql"
+          message="Variables should be all lowercase"
+          class="net.sourceforge.pmd.lang.rule.XPathRule">
+      <description>
+Variables should be all lowercase.
+      </description>
+      <priority>3</priority>
+      <properties>
+          <property name="xpath">
+              <value>
+<![CDATA[
+//VariableOrConstantDeclaratorId[ID[not(pmd:matches(@Image, $pattern))]]
+]]>
+              </value>
+          </property>
+          <property name="version" value="2.0" />
+          <property name="pattern" type="Regex" value="^[a-z_]+$" description="Pattern for valid variable names"/>
+      </properties>
+      <example>
+<![CDATA[
+CREATE OR REPLACE
+PACKAGE "test_schema"."test_package"
+IS
+
+-- good examples
+
+-- constants
+pi          CONSTANT NUMBER := 3.1415;
+-- package-level variables
+current_pi  NUMBER := 3.1415;
+
+
+-- bad examples
+CURRENT_VAL NUMBER := 3;
+END;
+/
+]]>
+        </example>
+    </rule>
+
+</ruleset>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- See https://pmd.github.io/latest/pmd_userdocs_making_rulesets.html -->
+
+<ruleset name="Custom Ruleset"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>
+Custom Ruleset with PLSQL Rules
+    </description>
+
+<!--
+    <exclude-pattern>.*/some/package/.*</exclude-pattern>
+    <exclude-pattern>.*/some/other/package/FunkyClassNamePrefix.*</exclude-pattern>
+    <include-pattern>.*/some/package/ButNotThisClass.*</include-pattern>
+-->
+
+    <rule ref="category/java/bestpractices.xml/AvoidPrintStackTrace" />
+
+    <rule ref="net/sourceforge/pmd/examples/java/rules/MyRule.xml/MyRule" />
+    <rule ref="net/sourceforge/pmd/examples/java/rules/VariableNaming.xml/VariableNaming" />
+
+</ruleset>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<ruleset name="VariableNamingRule"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>
+Rule set which defines VariableNamingRule
+    </description>
+
+    <rule name="VariableNaming"
+          language="java"
+          class="net.sourceforge.pmd.lang.rule.XPathRule"
+          message="Variables should be all lowercase">
+        <description>
+Variables should be all lowercase.
+        </description>
+        <priority>3</priority>
+        <properties>
+          <property name="xpath">
+              <value>
+<![CDATA[
+//VariableDeclaratorId[not(pmd:matches(@Image, $pattern))]
+]]>
+              </value>
+          </property>
+          <property name="version" value="2.0" />
+          <property name="pattern" type="Regex" value="^[a-z_]+$" description="Pattern for valid variable names"/>
+        </properties>
+        <example>
+<![CDATA[
+public class Example {
+    String CITY; // bad
+    String city; // better
+}
+]]>
+        </example>
+    </rule>
+</ruleset>

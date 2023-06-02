@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ruleset name="ShortVariableRule"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>
+Rule set which defines ShortVariableRule
+    </description>
+
+    <rule name="ShortVariable"
+          language="plsql"
+          message="Avoid variables with short names like {0}"
+          class="net.sourceforge.pmd.examples.plsql.rules.ShortVariableRule">
+      <description>
+Fields, local variables, or parameter names that are very short are not helpful to the reader.
+      </description>
+      <priority>3</priority>
+      <example>
+<![CDATA[
+CREATE OR REPLACE
+PACKAGE "test_schema"."test_package"
+IS
+
+-- good examples
+
+-- constants
+max_file_count  CONSTANT NUMBER := 42;
+-- package-level variables
+current_pi  NUMBER := 3.1415;
+
+
+-- bad examples
+i NUMBER := 3;
+END;
+/
+]]>
+        </example>
+    </rule>
+
+</ruleset>

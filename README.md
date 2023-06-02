@@ -2,7 +2,9 @@
 
 This repository contains separate folders for specific use cases:
 
-*   Java Custom Rules
-*   PLSQL Custom Rules
-*   Java Custom Rules without maven
-*   Simple Maven Project
+*   Creating Custom Rules
+    *   For Java: <custom-rules/maven-java/>
+    *   For PLSQL: <custom-rules/maven-plsql/>
+    *   For Java, but without maven: <custom-rules/plain-java/>
+*   Using PMD
+    *   With Maven: <maven/simple-project/>
