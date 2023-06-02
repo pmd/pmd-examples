@@ -24,7 +24,12 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-          cache: 'maven'
+      - uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('custom-rules/maven-java/**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
 
       - name: Run .ci/build.sh
         run: |
@@ -40,7 +45,12 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-          cache: 'maven'
+      - uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('custom-rules/maven-plsql/**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
 
       - name: Run .ci/build.sh
         run: |
@@ -60,6 +70,8 @@ jobs:
         with:
           path: custom-rules/plain-java/code
           key: ${{ runner.os }}-pmd-${{ hashFiles('custom-rules/plain-java/.ci/build.sh') }}
+          restore-keys: |
+            ${{ runner.os }}-pmd-
 
       - name: Run .ci/build.sh
         run: |
@@ -75,7 +87,12 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-          cache: 'maven'
+      - uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('maven/simple-project/**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
 
       - name: Run .ci/build.sh
         run: |
