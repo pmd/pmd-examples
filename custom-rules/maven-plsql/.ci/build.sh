@@ -18,7 +18,7 @@ echo "Running PMD..."
 echo "======================================================="
 echo
 cd pmd-plsql-dist/target
-unzip pmd-plsql-bin-1.0.0-SNAPSHOT.zip
+unzip -q pmd-plsql-bin-1.0.0-SNAPSHOT.zip
 pmd-plsql-bin-1.0.0-SNAPSHOT/bin/run.sh pmd --no-cache \
     --use-version plsql- \
     -f text \
@@ -27,5 +27,7 @@ pmd-plsql-bin-1.0.0-SNAPSHOT/bin/run.sh pmd --no-cache \
     --fail-on-violation false \
     --report-file pmdreport.txt
 
-grep "pmd-plsql-custom/src/test/plsql/short_variables.pls" pmdreport.txt || (echo "Missing expected rule violation"; exit 1)
-grep "pmd-plsql-custom/src/test/plsql/variable_naming.pls" pmdreport.txt || (echo "Missing expected rule violation"; exit 1)
+grep "pmd-plsql-custom/src/test/plsql/short_variables.pls" pmdreport.txt || (echo -e "\n\n\x1b[31mMissing expected rule violation\e[0m"; exit 1)
+grep "pmd-plsql-custom/src/test/plsql/variable_naming.pls" pmdreport.txt || (echo -e "\n\n\x1b[31mMissing expected rule violation\e[0m"; exit 1)
+
+echo -e "\n\n\x1b[32mTest successful\e[0m"

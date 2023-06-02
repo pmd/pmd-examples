@@ -53,4 +53,7 @@ CLASSPATH=custom-rule-example.jar ${PMD_HOME}/bin/run.sh pmd \
     -f text -d testsrc -R myrule.xml \
     --fail-on-violation false \
     --report-file build/report.txt
-grep "testsrc/Test.java" build/report.txt || (echo "Missing expected rule violation"; exit 1)
+
+grep "testsrc/Test.java" build/report.txt || (echo -e "\n\n\x1b[31mMissing expected rule violation\e[0m"; exit 1)
+
+echo -e "\n\n\x1b[32mTest successful\e[0m"
