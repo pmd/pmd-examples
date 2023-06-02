@@ -22,8 +22,9 @@ echo "======================================================="
 echo
 export PMD_HOME=${BASEDIR}/code/pmd-bin-${PMD_VERSION}
 if [ ! -d ${PMD_HOME} ]; then
-    wget https://github.com/pmd/pmd/releases/download/pmd_releases%2F${PMD_VERSION}/pmd-bin-${PMD_VERSION}.zip -O ${BASEDIR}/code/pmd-bin-${PMD_VERSION}.zip
-    unzip -d ${BASEDIR}/code ${BASEDIR}/code/pmd-bin-${PMD_VERSION}.zip
+    wget --no-verbose https://github.com/pmd/pmd/releases/download/pmd_releases%2F${PMD_VERSION}/pmd-bin-${PMD_VERSION}.zip -O ${BASEDIR}/code/pmd-bin-${PMD_VERSION}.zip
+    unzip -q -d ${BASEDIR}/code ${BASEDIR}/code/pmd-bin-${PMD_VERSION}.zip
+    echo "PMD ${PMD_VERSION} installed at: ${PMD_HOME}"
 else
     echo "PMD ${PMD_VERSION} already installed: ${PMD_HOME}"
 fi
@@ -39,6 +40,7 @@ echo
 #rm -rf pmd-examples
 #git clone https://github.com/pmd/pmd-examples.git pmd-examples
 #cd pmd-examples/custom-rules/plain-java
+rm -rf build
 mkdir build
 echo "Compiling..."
 javac -d build -cp "${PMD_HOME}/lib/*" src/*.java
