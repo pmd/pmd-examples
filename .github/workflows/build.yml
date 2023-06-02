@@ -59,7 +59,7 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: custom-rules/plain-java/code
-          key: ${{ runner.os }}-pmd-${{ hashFiles('custom-rules/plain-java/.ci/build.sh }}
+          key: ${{ runner.os }}-pmd-${{ hashFiles('custom-rules/plain-java/.ci/build.sh') }}
 
       - name: Run .ci/build.sh
         run: |
