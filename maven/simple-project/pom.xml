@@ -10,8 +10,8 @@
         <maven.compiler.release>${java.version}</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <pmd.plugin.version>3.14.0</pmd.plugin.version>
-        <pmd.version>6.38.0</pmd.version>
+        <pmd.plugin.version>3.21.0</pmd.plugin.version>
+        <pmd.version>6.55.0</pmd.version>
     </properties>
 
     <build>
@@ -19,7 +19,7 @@
             <plugins>
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.1</version>
+                    <version>3.11.0</version>
                 </plugin>
 
                 <plugin>

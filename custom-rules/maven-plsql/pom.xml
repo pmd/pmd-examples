@@ -14,8 +14,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>8</java.version>
     <maven.compiler.release>${java.version}</maven.compiler.release>
-    <pmd.version>6.29.0</pmd.version>
-    <pmd.ui.version>6.27.0</pmd.ui.version>
+    <pmd.version>6.55.0</pmd.version>
+    <pmd.ui.version>6.49.0</pmd.ui.version>
   </properties>
 
   <dependencyManagement>
@@ -50,17 +50,17 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.0</version>
+          <version>3.11.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.6.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.1.1</version>
+          <version>3.6.0</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -82,7 +82,7 @@
   <scm>
     <connection>scm:git:git://github.com/pmd/pmd-examples.git</connection>
     <url>https://github.com/pmd/pmd-examples</url>
-    <tag>plsql</tag>
+    <tag>main</tag>
   </scm>
 
   <modules>
