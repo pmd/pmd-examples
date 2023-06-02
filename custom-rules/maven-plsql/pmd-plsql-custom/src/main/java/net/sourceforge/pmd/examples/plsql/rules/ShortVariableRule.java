@@ -31,7 +31,7 @@ public class ShortVariableRule extends AbstractPLSQLRule {
         ASTID id = node.getFirstChildOfType(ASTID.class);
         if (id != null) {
             if (node.getImage().length() < min) {
-                addViolation(data, node, node.getImage());
+                asCtx(data).addViolation(node, node.getImage());
             }
         }
         return data;

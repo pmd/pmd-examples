@@ -1,3 +1,5 @@
+package net.sourceforge.pmd.examples.maven.simpleproject;
+
 public class Main {
 
     // UnusedPrivateField

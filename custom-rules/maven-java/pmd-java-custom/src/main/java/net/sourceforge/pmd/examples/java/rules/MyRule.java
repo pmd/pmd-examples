@@ -2,14 +2,14 @@ package net.sourceforge.pmd.examples.java.rules;
 
 import net.sourceforge.pmd.lang.java.ast.ASTVariableDeclaratorId;
 import net.sourceforge.pmd.lang.java.rule.AbstractJavaRule;
-import net.sourceforge.pmd.properties.StringProperty;
+import net.sourceforge.pmd.properties.PropertyDescriptor;
+import net.sourceforge.pmd.properties.PropertyFactory;
 
 public class MyRule extends AbstractJavaRule {
 
-    private static final StringProperty BAD_NAME = StringProperty.named("badName")
+    private static final PropertyDescriptor<String> BAD_NAME = PropertyFactory.stringProperty("badName")
             .defaultValue("foo")
             .desc("The variable name that should not be used.")
-            .uiOrder(1.0f)
             .build();
 
     public MyRule() {
@@ -21,7 +21,7 @@ public class MyRule extends AbstractJavaRule {
     public Object visit(ASTVariableDeclaratorId node, Object data) {
         String badName = getProperty(BAD_NAME);
         if (node.hasImageEqualTo(badName)) {
-            addViolation(data, node, node.getImage());
+            asCtx(data).addViolation(node, node.getName());
         }
         return data;
     }

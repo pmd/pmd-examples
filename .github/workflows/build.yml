@@ -43,7 +43,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Run .ci/build
+      - name: Run .ci/build.sh
         run: |
           cd custom-rules/plain-java
           .ci/build.sh
@@ -54,8 +54,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Run maven
+      - name: Run .ci/build.sh
         run: |
           cd maven/simple-project
-          mvn verify | tee build.log
-          grep "You have 2 PMD violations" build.log || (echo "Missing expected rule violation"; exit 1)
+          .ci/build.sh
