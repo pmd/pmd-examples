@@ -56,12 +56,10 @@
          </dependency>
        </dependencies>
        <configuration>
-         <appendAssemblyId>false</appendAssemblyId>
          <attach>false</attach>
          <archiverConfig>
            <defaultDirectoryMode>493</defaultDirectoryMode> <!-- 0755 -->
          </archiverConfig>
-         <finalName>${pmd.dist.bin.baseDirectory}</finalName>
          <descriptorRefs>
            <descriptorRef>pmd-bin</descriptorRef>
          </descriptorRefs>
