@@ -18,7 +18,7 @@ echo "Running PMD..."
 echo "======================================================="
 echo
 cd pmd-java-dist/target
-unzip -q pmd-java-bin-1.0.0-SNAPSHOT.zip
+unzip -q pmd-java-dist-1.0.0-SNAPSHOT-bin.zip
 pmd-java-bin-1.0.0-SNAPSHOT/bin/pmd check --no-cache \
     -f text \
     -d ../../ \
