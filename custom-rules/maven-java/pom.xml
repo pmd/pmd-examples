@@ -40,6 +40,13 @@
       <artifactId>pmd-cli</artifactId>
       <version>${pmd.version}</version>
       <scope>runtime</scope>
+      <exclusions>
+        <!-- exclude pmd-languages-deps because we only want to include pmd-java in our custom distribution -->
+        <exclusion>
+          <groupId>net.sourceforge.pmd</groupId>
+          <artifactId>pmd-languages-deps</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <!-- include bash/zsh completions -->
     <dependency>
@@ -49,6 +56,13 @@
       <type>sh</type>
       <classifier>completion</classifier>
       <scope>runtime</scope>
+      <exclusions>
+        <!-- exclude pmd-languages-deps because we only want to include pmd-java in our custom distribution -->
+        <exclusion>
+          <groupId>net.sourceforge.pmd</groupId>
+          <artifactId>pmd-languages-deps</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>net.sourceforge.pmd</groupId>
