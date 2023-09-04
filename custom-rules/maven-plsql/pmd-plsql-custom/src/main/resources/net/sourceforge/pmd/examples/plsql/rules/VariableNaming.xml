@@ -21,7 +21,7 @@ Variables should be all lowercase.
           <property name="xpath">
               <value>
 <![CDATA[
-//VariableOrConstantDeclaratorId[ID[not(pmd:matches(@Image, $pattern))]]
+//VariableOrConstantDeclaratorId[ID[not(matches(@Image, $pattern))]]
 ]]>
               </value>
           </property>

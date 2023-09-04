@@ -34,14 +34,14 @@ The result is a zip file: `target/pmd-java-bin-1.0.0-SNAPSHOT.zip`.
 ### Option A
 
 1.  Install PMD using the created `pmd-java-bin-1.0.0-SNAPSHOT.zip` file like a normal PMD binary distribution.
-2.  Run PMD: `./run.sh pmd -f text -d src -R custom-java-ruleset.xml`
+2.  Run PMD: `bin/pmd check -f text -d src -R custom-java-ruleset.xml`
 
 ### Option B
 
 1.  Install PMD as usual.
 2.  Copy the jar file `pmd-java-custom-1.0.0-SNAPSHOT.jar` to the `lib` directory, where you have
     installed PMD.
-3.  Run PMD: `./run.sh pmd -f text -d src -R custom-java-ruleset.xml`
+3.  Run PMD: `bin/pmd check -f text -d src -R custom-java-ruleset.xml`
 
 ## Using with the maven-pmd-plugin
 
@@ -56,11 +56,14 @@ The result is a zip file: `target/pmd-java-bin-1.0.0-SNAPSHOT.zip`.
     the maven-pmd-plugin:
 
     ```xml
+    <properties>
+            <pmd.version>7.0.0-rc3</pmd.version>
+    </properties>
     ...
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
-        <version>3.11.0</version>
+        <version>3.21.1-pmd-7-SNAPSHOT</version>
         <executions>
             <execution>
                 <phase>verify</phase>
@@ -82,6 +85,26 @@ The result is a zip file: `target/pmd-java-bin-1.0.0-SNAPSHOT.zip`.
                 <groupId>net.sourceforge.pmd.examples</groupId>
                 <artifactId>pmd-java-custom</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sourceforge.pmd</groupId>
+                <artifactId>pmd-core</artifactId>
+                <version>${pmd.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sourceforge.pmd</groupId>
+                <artifactId>pmd-java</artifactId>
+                <version>${pmd.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sourceforge.pmd</groupId>
+                <artifactId>pmd-javascript</artifactId>
+                <version>${pmd.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sourceforge.pmd</groupId>
+                <artifactId>pmd-jsp</artifactId>
+                <version>${pmd.version}</version>
             </dependency>
         </dependencies>
     </plugin>

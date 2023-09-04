@@ -39,7 +39,7 @@
                   <type>jar</type>
                   <overWrite>false</overWrite>
                   <outputDirectory>${basedir}/target/extra-resources</outputDirectory>
-                  <includes>scripts/**,LICENSE</includes>
+                  <includes>scripts/**,LICENSE,conf/**</includes>
                 </artifactItem>
               </artifactItems>
             </configuration>
@@ -56,12 +56,10 @@
          </dependency>
        </dependencies>
        <configuration>
-         <appendAssemblyId>false</appendAssemblyId>
          <attach>false</attach>
          <archiverConfig>
            <defaultDirectoryMode>493</defaultDirectoryMode> <!-- 0755 -->
          </archiverConfig>
-         <finalName>${pmd.dist.bin.baseDirectory}</finalName>
          <descriptorRefs>
            <descriptorRef>pmd-bin</descriptorRef>
          </descriptorRefs>
@@ -96,6 +94,17 @@
     <dependency>
       <groupId>net.sourceforge.pmd</groupId>
       <artifactId>pmd-ui</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>net.sourceforge.pmd</groupId>
+      <artifactId>pmd-cli</artifactId>
+    </dependency>
+    <!-- include bash/zsh completions -->
+    <dependency>
+      <groupId>net.sourceforge.pmd</groupId>
+      <artifactId>pmd-cli</artifactId>
+      <type>sh</type>
+      <classifier>completion</classifier>
     </dependency>
   </dependencies>
 

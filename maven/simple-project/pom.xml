@@ -10,8 +10,8 @@
         <maven.compiler.release>${java.version}</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <pmd.plugin.version>3.21.0</pmd.plugin.version>
-        <pmd.version>6.55.0</pmd.version>
+        <pmd.plugin.version>3.21.1-pmd-7-SNAPSHOT</pmd.plugin.version>
+        <pmd.version>7.0.0-rc3</pmd.version>
     </properties>
 
     <build>
@@ -73,4 +73,18 @@
             </plugin>
         </plugins>
     </build>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>apache.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>https://repository.apache.org/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 </project>

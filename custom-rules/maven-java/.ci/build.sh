@@ -18,12 +18,12 @@ echo "Running PMD..."
 echo "======================================================="
 echo
 cd pmd-java-dist/target
-unzip -q pmd-java-bin-1.0.0-SNAPSHOT.zip
-pmd-java-bin-1.0.0-SNAPSHOT/bin/run.sh pmd --no-cache \
+unzip -q pmd-java-dist-1.0.0-SNAPSHOT-bin.zip
+pmd-java-bin-1.0.0-SNAPSHOT/bin/pmd check --no-cache \
     -f text \
     -d ../../ \
     -R custom-java-ruleset.xml \
-    --fail-on-violation false \
+    --no-fail-on-violation \
     --report-file pmdreport.txt
 
 grep "examples/java/rules/MyRule.java" pmdreport.txt || (echo -e "\n\n\x1b[31mMissing expected rule violation\e[0m"; exit 1)
