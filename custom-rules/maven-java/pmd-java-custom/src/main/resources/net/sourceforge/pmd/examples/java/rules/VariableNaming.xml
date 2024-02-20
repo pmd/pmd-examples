@@ -11,7 +11,7 @@ Rule set which defines VariableNamingRule
 
     <rule name="VariableNaming"
           language="java"
-          class="net.sourceforge.pmd.lang.rule.XPathRule"
+          class="net.sourceforge.pmd.lang.rule.xpath.XPathRule"
           message="Variables should be all lowercase">
         <description>
 Variables should be all lowercase.
@@ -21,11 +21,10 @@ Variables should be all lowercase.
           <property name="xpath">
               <value>
 <![CDATA[
-//VariableDeclaratorId[not(matches(@Name, $pattern))]
+//VariableId[not(matches(@Name, $pattern))]
 ]]>
               </value>
           </property>
-          <property name="version" value="2.0" />
           <property name="pattern" type="Regex" value="^[a-z_]+$" description="Pattern for valid variable names"/>
         </properties>
         <example>

@@ -14,8 +14,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>8</java.version>
     <maven.compiler.release>${java.version}</maven.compiler.release>
-    <pmd.version>7.0.0-rc3</pmd.version>
-    <pmd.ui.version>7.0.0-rc1</pmd.ui.version>
+    <pmd.version>7.0.0-SNAPSHOT</pmd.version>
+    <pmd.ui.version>7.0.0-SNAPSHOT</pmd.ui.version>
   </properties>
 
   <dependencyManagement>
@@ -39,22 +39,6 @@
       <groupId>net.sourceforge.pmd</groupId>
       <artifactId>pmd-cli</artifactId>
       <version>${pmd.version}</version>
-      <scope>runtime</scope>
-      <exclusions>
-        <!-- exclude pmd-languages-deps because we only want to include pmd-java in our custom distribution -->
-        <exclusion>
-          <groupId>net.sourceforge.pmd</groupId>
-          <artifactId>pmd-languages-deps</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <!-- include bash/zsh completions -->
-    <dependency>
-      <groupId>net.sourceforge.pmd</groupId>
-      <artifactId>pmd-cli</artifactId>
-      <version>${pmd.version}</version>
-      <type>sh</type>
-      <classifier>completion</classifier>
       <scope>runtime</scope>
       <exclusions>
         <!-- exclude pmd-languages-deps because we only want to include pmd-java in our custom distribution -->
@@ -97,34 +81,36 @@
           <artifactId>maven-dependency-plugin</artifactId>
           <version>3.6.0</version>
         </plugin>
-        <plugin>
-          <groupId>org.cyclonedx</groupId>
-          <artifactId>cyclonedx-maven-plugin</artifactId>
-          <version>2.7.6</version>
-        </plugin>
+        <!-- Optional: -->
+<!--        <plugin>-->
+<!--          <groupId>org.cyclonedx</groupId>-->
+<!--          <artifactId>cyclonedx-maven-plugin</artifactId>-->
+<!--          <version>2.7.6</version>-->
+<!--        </plugin>-->
       </plugins>
     </pluginManagement>
     <plugins>
-      <plugin>
-        <groupId>org.cyclonedx</groupId>
-        <artifactId>cyclonedx-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>makeAggregateBom</goal>
-            </goals>
-          </execution>
-        </executions>
+      <!-- Optional: -->
+<!--      <plugin>-->
+<!--        <groupId>org.cyclonedx</groupId>-->
+<!--        <artifactId>cyclonedx-maven-plugin</artifactId>-->
+<!--        <executions>-->
+<!--          <execution>-->
+<!--            <phase>package</phase>-->
+<!--            <goals>-->
+<!--              <goal>makeAggregateBom</goal>-->
+<!--            </goals>-->
+<!--          </execution>-->
+<!--        </executions>-->
         <!-- https://github.com/CycloneDX/cyclonedx-maven-plugin/issues/326 -->
-        <dependencies>
-          <dependency>
-            <groupId>org.ow2.asm</groupId>
-            <artifactId>asm</artifactId>
-            <version>9.5</version>
-          </dependency>
-        </dependencies>
-      </plugin>
+<!--        <dependencies>-->
+<!--          <dependency>-->
+<!--            <groupId>org.ow2.asm</groupId>-->
+<!--            <artifactId>asm</artifactId>-->
+<!--            <version>9.5</version>-->
+<!--          </dependency>-->
+<!--        </dependencies>-->
+<!--      </plugin>-->
     </plugins>
   </build>
 

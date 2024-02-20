@@ -10,8 +10,8 @@
         <maven.compiler.release>${java.version}</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <pmd.plugin.version>3.21.1-pmd-7-SNAPSHOT</pmd.plugin.version>
-        <pmd.version>7.0.0-rc3</pmd.version>
+        <pmd.plugin.version>3.21.2</pmd.plugin.version>
+        <pmd.version>7.0.0-SNAPSHOT</pmd.version>
     </properties>
 
     <build>
@@ -34,6 +34,11 @@
                         <printFailingErrors>true</printFailingErrors>
                     </configuration>
                     <dependencies>
+                        <dependency>
+                            <groupId>net.sourceforge.pmd</groupId>
+                            <artifactId>pmd-compat6</artifactId>
+                            <version>${pmd.version}</version>
+                        </dependency>
                         <dependency>
                             <groupId>net.sourceforge.pmd</groupId>
                             <artifactId>pmd-core</artifactId>

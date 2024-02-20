@@ -57,13 +57,13 @@ The result is a zip file: `target/pmd-java-bin-1.0.0-SNAPSHOT.zip`.
 
     ```xml
     <properties>
-            <pmd.version>7.0.0-rc3</pmd.version>
+            <pmd.version>7.0.0-SNAPSHOT</pmd.version>
     </properties>
     ...
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
-        <version>3.21.1-pmd-7-SNAPSHOT</version>
+        <version>3.21.2</version>
         <executions>
             <execution>
                 <phase>verify</phase>
@@ -85,6 +85,11 @@ The result is a zip file: `target/pmd-java-bin-1.0.0-SNAPSHOT.zip`.
                 <groupId>net.sourceforge.pmd.examples</groupId>
                 <artifactId>pmd-java-custom</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sourceforge.pmd</groupId>
+                <artifactId>pmd-compat6</artifactId>
+                <version>${pmd.version}</version>
             </dependency>
             <dependency>
                 <groupId>net.sourceforge.pmd</groupId>
