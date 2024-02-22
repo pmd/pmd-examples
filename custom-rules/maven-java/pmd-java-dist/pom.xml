@@ -99,13 +99,6 @@
       <groupId>net.sourceforge.pmd</groupId>
       <artifactId>pmd-cli</artifactId>
     </dependency>
-    <!-- include bash/zsh completions -->
-    <dependency>
-      <groupId>net.sourceforge.pmd</groupId>
-      <artifactId>pmd-cli</artifactId>
-      <type>sh</type>
-      <classifier>completion</classifier>
-    </dependency>
   </dependencies>
 
 </project>

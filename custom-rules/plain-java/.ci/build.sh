@@ -4,7 +4,7 @@
 set -e
 java -version
 
-PMD_VERSION=7.0.0-rc3
+PMD_VERSION=7.0.0-SNAPSHOT
 
 echo
 echo "======================================================="
@@ -22,7 +22,11 @@ echo "======================================================="
 echo
 export PMD_HOME=${BASEDIR}/code/pmd-bin-${PMD_VERSION}
 if [ ! -d ${PMD_HOME} ]; then
-    wget --no-verbose https://github.com/pmd/pmd/releases/download/pmd_releases%2F${PMD_VERSION}/pmd-dist-${PMD_VERSION}-bin.zip -O ${BASEDIR}/code/pmd-dist-${PMD_VERSION}-bin.zip
+    if [[ "${PMD_VERSION}" == *-SNAPSHOT ]]; then
+      wget --no-verbose https://sourceforge.net/projects/pmd/files/pmd/${PMD_VERSION}/pmd-dist-${PMD_VERSION}-bin.zip/download -O ${BASEDIR}/code/pmd-dist-${PMD_VERSION}-bin.zip
+    else
+      wget --no-verbose https://github.com/pmd/pmd/releases/download/pmd_releases%2F${PMD_VERSION}/pmd-dist-${PMD_VERSION}-bin.zip -O ${BASEDIR}/code/pmd-dist-${PMD_VERSION}-bin.zip
+    fi
     unzip -q -d ${BASEDIR}/code ${BASEDIR}/code/pmd-dist-${PMD_VERSION}-bin.zip
     echo "PMD ${PMD_VERSION} installed at: ${PMD_HOME}"
 else

@@ -10,9 +10,9 @@ import net.sourceforge.pmd.lang.plsql.ast.ASTID;
 import net.sourceforge.pmd.lang.plsql.ast.ASTVariableOrConstantDeclaratorId;
 import net.sourceforge.pmd.lang.plsql.rule.AbstractPLSQLRule;
 import net.sourceforge.pmd.lang.rule.RuleTargetSelector;
+import net.sourceforge.pmd.properties.NumericConstraints;
 import net.sourceforge.pmd.properties.PropertyDescriptor;
 import net.sourceforge.pmd.properties.PropertyFactory;
-import net.sourceforge.pmd.properties.constraints.NumericConstraints;
 
 public class ShortVariableRule extends AbstractPLSQLRule {
 
