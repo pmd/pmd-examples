@@ -74,36 +74,29 @@
           <artifactId>maven-dependency-plugin</artifactId>
           <version>3.6.0</version>
         </plugin>
-        <!-- Optional: -->
-<!--        <plugin>-->
-<!--          <groupId>org.cyclonedx</groupId>-->
-<!--          <artifactId>cyclonedx-maven-plugin</artifactId>-->
-<!--          <version>2.7.6</version>-->
-<!--        </plugin>-->
       </plugins>
     </pluginManagement>
     <plugins>
       <!-- Optional: -->
-<!--      <plugin>-->
-<!--        <groupId>org.cyclonedx</groupId>-->
-<!--        <artifactId>cyclonedx-maven-plugin</artifactId>-->
-<!--        <executions>-->
-<!--          <execution>-->
-<!--            <phase>package</phase>-->
-<!--            <goals>-->
-<!--              <goal>makeAggregateBom</goal>-->
-<!--            </goals>-->
-<!--          </execution>-->
-<!--        </executions>-->
-        <!-- https://github.com/CycloneDX/cyclonedx-maven-plugin/issues/326 -->
-<!--        <dependencies>-->
-<!--          <dependency>-->
-<!--            <groupId>org.ow2.asm</groupId>-->
-<!--            <artifactId>asm</artifactId>-->
-<!--            <version>9.5</version>-->
-<!--          </dependency>-->
-<!--        </dependencies>-->
-<!--      </plugin>-->
+      <!-- Optional: -->
+<!--
+      <plugin>
+        <groupId>org.cyclonedx</groupId>
+        <artifactId>cyclonedx-maven-plugin</artifactId>
+        <version>2.7.11</version>
+        <configuration>
+          <outputName>pmd-${project.version}-cyclonedx</outputName>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>makeAggregateBom</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+-->
     </plugins>
   </build>
 

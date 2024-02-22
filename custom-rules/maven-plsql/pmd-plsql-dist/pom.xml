@@ -48,13 +48,13 @@
       </plugin>
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
-<!--        <dependencies>-->
-<!--          <dependency>-->
-<!--            <groupId>net.sourceforge.pmd</groupId>-->
-<!--            <artifactId>pmd-dist</artifactId>-->
-<!--            <version>${pmd.version}</version>-->
-<!--          </dependency>-->
-<!--        </dependencies>-->
+        <dependencies>
+          <dependency>
+            <groupId>net.sourceforge.pmd</groupId>
+            <artifactId>pmd-dist</artifactId>
+            <version>${pmd.version}</version>
+          </dependency>
+        </dependencies>
         <configuration>
           <appendAssemblyId>false</appendAssemblyId>
           <attach>false</attach>
@@ -62,9 +62,9 @@
             <defaultDirectoryMode>493</defaultDirectoryMode> <!-- 0755 -->
           </archiverConfig>
           <finalName>${pmd.dist.bin.baseDirectory}</finalName>
-          <descriptors>
-            <descriptor>src/main/resources/assemblies/pmd-bin-without-sbom.xml</descriptor>
-          </descriptors>
+          <descriptorRefs>
+            <descriptorRef>pmd-bin</descriptorRef>
+          </descriptorRefs>
         </configuration>
         <executions>
           <execution>
