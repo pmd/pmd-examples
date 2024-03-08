@@ -1,6 +1,6 @@
 package net.sourceforge.pmd.examples.java.rules;
 
-import net.sourceforge.pmd.testframework.SimpleAggregatorTst;
+import net.sourceforge.pmd.test.SimpleAggregatorTst;
 
 public class VariableNamingRuleTest extends SimpleAggregatorTst {
 

@@ -4,7 +4,7 @@
 
 package net.sourceforge.pmd.examples.plsql.rules;
 
-import net.sourceforge.pmd.testframework.SimpleAggregatorTst;
+import net.sourceforge.pmd.test.SimpleAggregatorTst;
 
 /**
  *

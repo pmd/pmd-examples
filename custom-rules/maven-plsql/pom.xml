@@ -15,7 +15,7 @@
     <java.version>8</java.version>
     <maven.compiler.release>${java.version}</maven.compiler.release>
     <pmd.version>7.0.0-SNAPSHOT</pmd.version>
-    <pmd.ui.version>7.0.0-SNAPSHOT</pmd.ui.version>
+    <pmd-designer.version>7.0.0-SNAPSHOT</pmd-designer.version>
   </properties>
 
   <repositories>
@@ -49,8 +49,8 @@
     </dependency>
     <dependency>
       <groupId>net.sourceforge.pmd</groupId>
-      <artifactId>pmd-ui</artifactId>
-      <version>${pmd.ui.version}</version>
+      <artifactId>pmd-designer</artifactId>
+      <version>${pmd-designer.version}</version>
     </dependency>
     <dependency>
       <groupId>net.sourceforge.pmd</groupId>
@@ -94,7 +94,6 @@
       </plugins>
     </pluginManagement>
     <plugins>
-      <!-- Optional: -->
       <!-- Optional: -->
 <!--
       <plugin>
