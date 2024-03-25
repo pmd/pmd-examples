@@ -14,8 +14,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>8</java.version>
     <maven.compiler.release>${java.version}</maven.compiler.release>
-    <pmd.version>7.0.0-SNAPSHOT</pmd.version>
-    <pmd-designer.version>7.0.0-SNAPSHOT</pmd-designer.version>
+    <pmd.version>7.0.0</pmd.version>
+    <pmd-designer.version>7.0.0</pmd-designer.version>
   </properties>
 
   <repositories>
