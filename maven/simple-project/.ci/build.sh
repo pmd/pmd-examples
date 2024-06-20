@@ -3,7 +3,7 @@
 # exit immediately if a command fails
 set -e
 
-mvn --show-version --batch-mode verify 2>&1 | tee build.log
+./mvnw --show-version --batch-mode verify 2>&1 | tee build.log
 
 echo
 echo "Verifying build.log..."
