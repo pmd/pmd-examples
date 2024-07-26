@@ -7,6 +7,10 @@ set -e
 
 echo
 echo "Verifying build.log..."
-grep "You have 2 PMD violations" build.log || (echo -e "\n\n\x1b[31mMissing expected rule violation\e[0m"; exit 1)
+failure_count=$(grep --count "PMD Failure" build.log)
+if [[ $failure_count -ne 2 ]]; then
+  echo -e "\n\n\x1b[31mMissing expected rule violations\e[0m"
+  exit 1
+fi
 
 echo -e "\n\n\x1b[32mTest successful\e[0m"
