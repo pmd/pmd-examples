@@ -4,7 +4,7 @@
 set -e
 java -version
 
-PMD_VERSION=7.2.0
+PMD_VERSION=7.4.0
 
 echo
 echo "======================================================="
