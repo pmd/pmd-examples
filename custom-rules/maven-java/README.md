@@ -63,7 +63,7 @@ The result is a zip file: `target/pmd-java-bin-1.0.0-SNAPSHOT.zip`.
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
-        <version>3.23.0</version>
+        <version>3.24.0</version>
         <executions>
             <execution>
                 <phase>verify</phase>
