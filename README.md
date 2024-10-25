@@ -9,3 +9,4 @@ This repository contains separate folders for specific use cases:
 *   Using PMD
     *   With Maven: [maven/simple-project/](maven/simple-project/)
     *   With Gradle: [gradle/simple-project/](gradle/simple-project/)
+    *   With Ant: [ant/simple-project/](ant/simple-project/)

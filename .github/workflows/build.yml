@@ -120,3 +120,23 @@ jobs:
         run: |
           cd gradle/simple-project
           .ci/build.sh
+
+  ant_simple_project:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - uses: actions/cache@v4
+        with:
+          path: ant/simple-project/ant/tools
+          key: ${{ runner.os }}-ant-${{ hashFiles('build.xml', '.ci/build.sh') }}
+          restore-keys: |
+            ${{ runner.os }}-ant-
+      - name: Run .ci/build.sh
+        run: |
+          cd ant/simple-project
+          .ci/build.sh
