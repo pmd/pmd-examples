@@ -57,13 +57,13 @@ The result is a zip file: `target/pmd-java-bin-1.0.0-SNAPSHOT.zip`.
 
     ```xml
     <properties>
-            <pmd.version>7.7.0</pmd.version>
+            <pmd.version>7.10.0</pmd.version>
     </properties>
     ...
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
-        <version>3.25.0</version>
+        <version>3.26.0</version>
         <executions>
             <execution>
                 <phase>verify</phase>
