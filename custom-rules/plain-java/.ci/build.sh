@@ -20,7 +20,7 @@ echo "======================================================="
 echo "Downloading PMD ${PMD_VERSION}"
 echo "======================================================="
 echo
-export PMD_HOME=${BASEDIR}/code/pmd-bin-${PMD_VERSION}
+PMD_HOME=${BASEDIR}/code/pmd-bin-${PMD_VERSION}
 if [ ! -d ${PMD_HOME} ]; then
     if [[ "${PMD_VERSION}" == *-SNAPSHOT ]]; then
       wget --no-verbose https://sourceforge.net/projects/pmd/files/pmd/${PMD_VERSION}/pmd-dist-${PMD_VERSION}-bin.zip/download -O ${BASEDIR}/code/pmd-dist-${PMD_VERSION}-bin.zip
