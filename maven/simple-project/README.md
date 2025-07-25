@@ -13,7 +13,7 @@ This should find the following violations in Main.java:
 
 Run with
 
-    mvn clean verify -Dpmd.version=7.16.0-SNAPSHOT -Dpmd.plugin.version=3.27.0-SNAPSHOT
+    mvn clean verify -Dpmd.version=7.17.0-SNAPSHOT -Dpmd.plugin.version=3.27.0-SNAPSHOT
 
 in order to set specific version for PMD and/or maven-pmd-plugin.
 
