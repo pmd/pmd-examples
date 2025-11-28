@@ -57,7 +57,7 @@ The result is a zip file: `target/pmd-java-bin-1.0.0-SNAPSHOT.zip`.
 
     ```xml
     <properties>
-            <pmd.version>7.16.0</pmd.version>
+            <pmd.version>7.19.0</pmd.version>
     </properties>
     ...
     <plugin>
