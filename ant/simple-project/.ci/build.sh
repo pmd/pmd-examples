@@ -4,7 +4,7 @@
 set -e
 
 ANT_VERSION=1.10.15
-PMD_VERSION=7.19.0
+PMD_VERSION=7.20.0
 
 BASEDIR="$(pwd)"
 mkdir -p tools
