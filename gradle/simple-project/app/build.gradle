@@ -47,7 +47,7 @@ tasks.named('test') {
 }
 
 pmd {
-    toolVersion = "7.23.0"
+    toolVersion = "7.24.0"
     consoleOutput = true
 
     //ruleSets = ["category/java/errorprone.xml"] // default
