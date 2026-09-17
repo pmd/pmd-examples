@@ -3,7 +3,7 @@
 # exit immediately if a command fails
 set -e
 
-ANT_VERSION=1.10.17
+ANT_VERSION=1.10.18
 PMD_VERSION=7.27.0
 
 BASEDIR="$(pwd)"
