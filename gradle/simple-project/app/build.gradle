@@ -30,6 +30,7 @@ dependencies {
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
+// List available toolchains: ./gradlew -q javaToolchains
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
@@ -52,4 +53,10 @@ pmd {
 
     //ruleSets = ["category/java/errorprone.xml"] // default
     ruleSets = ["category/java/errorprone.xml", "category/java/bestpractices.xml"]
+}
+
+dependencies {
+    pmdAux javaToolchains.launcherFor(java.toolchain)
+            .map { it.metadata.installationPath }
+            .map { it.files("lib/jrt-fs.jar")}
 }
