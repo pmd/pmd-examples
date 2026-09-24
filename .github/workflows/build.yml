@@ -137,6 +137,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-ant-
       - name: Run .ci/build.sh
+        env:
+          JAVA17_HOME: ${{ env.JAVA_HOME_17_X64 }}
         run: |
           cd ant/simple-project
           .ci/build.sh
