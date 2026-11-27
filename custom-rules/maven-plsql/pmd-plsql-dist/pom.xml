@@ -26,7 +26,7 @@
         <executions>
           <execution>
             <id>unpack</id>
-            <phase>package</phase>
+            <phase>prepare-package</phase> <!-- before the assembly runs in package -->
             <goals>
               <goal>unpack</goal>
             </goals>
@@ -42,6 +42,21 @@
                   <includes>scripts/**,LICENSE,conf/**</includes>
                 </artifactItem>
               </artifactItems>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copy-controlsfx-8</id>
+            <phase>prepare-package</phase> <!-- before the assembly runs in package -->
+            <goals><goal>copy</goal></goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.controlsfx</groupId>
+                  <artifactId>controlsfx</artifactId>
+                  <version>8.40.18</version>
+                </artifactItem>
+              </artifactItems>
+              <outputDirectory>${project.build.directory}/controlsfx-8</outputDirectory>
             </configuration>
           </execution>
         </executions>
